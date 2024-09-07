@@ -39,6 +39,10 @@ dependencies:
   stream_chat_flutter: ^8.0.0
   photo_manager: ^3.3.0
   flutter_localization: ^0.2.1
+  flutter_portal: ^1.1.4
+  rxdart: ^0.27.7
+  logger: ^2.4.0
+  http: ^1.2.2
 
 
 

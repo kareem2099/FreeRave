@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:freerave/auth/screen/login_screen.dart';
 import 'package:freerave/auth/screen/register_screen.dart';
-import 'package:freerave/main_file_components/stream_chat_client.dart';
 import 'package:freerave/main_screens/main_navigation.dart';
 import 'package:stream_chat_flutter/stream_chat_flutter.dart';
 

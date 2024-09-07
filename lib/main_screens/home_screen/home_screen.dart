@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:freerave/main_screens/home_screen/public_chat/cubit/stream_channel_service.dart';
-import 'package:freerave/main_screens/home_screen/public_chat/page/chat_page.dart';
 import 'package:freerave/main_screens/home_screen/public_chat/widget/chat_navigator.dart';
 import 'package:stream_chat_flutter/stream_chat_flutter.dart';
 
@@ -26,7 +25,7 @@ class HomeScreenState extends State<HomeScreen> {
     super.initState();
     final client = StreamChat.of(context).client;
     _channelService = StreamChannelService(client);
-    _chatNavigator = ChatNavigator(_channelService);
+    _chatNavigator = ChatNavigator(_channelService,client);
   }
 
   @override

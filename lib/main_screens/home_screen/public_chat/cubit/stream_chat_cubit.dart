@@ -1,20 +1,38 @@
-
+import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:freerave/auth/services/auth_service.dart';
 import 'package:freerave/main_screens/home_screen/public_chat/cubit/stream_chat_state.dart';
 import 'package:stream_chat_flutter/stream_chat_flutter.dart';
+import 'package:logger/logger.dart' as log;
 import 'stream_chat_service.dart';
 
 class StreamChatCubit extends Cubit<PublicChatState> {
   final StreamChatService chatService;
+  final AuthService authService;
+  final log.Logger logger = log.Logger();
+  StreamSubscription<List<Message>>? _messagesSubscription;
+  StreamSubscription<User?>? _userPresenceSubscription;
+  StreamSubscription<bool>? _typingIndicatorSubscription;
 
-  StreamChatCubit(this.chatService) : super(PublicChatInitial());
+  StreamChatCubit(this.chatService, this.authService) : super(PublicChatInitial());
 
-  Future<void> connectUser(User user, String token) async {
+  Future<void> connectUser() async {
     try {
       emit(PublicChatConnecting());
+      final userInfo = authService.getUserInfo();
+      final user = User(
+        id: userInfo['userID']!,
+        extraData: {
+          'name': userInfo['name'],
+          'email': userInfo['email'],
+          'image': userInfo['photoUrl'],
+        },
+      );
+      final token = await authService.getStreamChatToken(user.id);
       await chatService.connectUser(user, token);
       emit(PublicChatConnected());
     } catch (e) {
+      logger.e('Error connecting user: $e');
       emit(PublicChatError('Error connecting user: ${e.toString()}'));
     }
   }
@@ -24,7 +42,8 @@ class StreamChatCubit extends Cubit<PublicChatState> {
       await chatService.disconnectUser();
       emit(PublicChatDisconnected());
     } catch (e) {
-      emit(PublicChatError('Error disconnecting user'));
+      logger.e('Error disconnecting user: $e');
+      emit(PublicChatError('Error disconnecting user: ${e.toString()}'));
     }
   }
 
@@ -32,21 +51,87 @@ class StreamChatCubit extends Cubit<PublicChatState> {
     try {
       emit(PublicChatLoadingMessages());
       final messagesStream = chatService.getMessages(channel);
-      messagesStream.listen((messages) {
+      _messagesSubscription = messagesStream.listen((messages) {
         emit(PublicChatMessagesLoaded(messages));
       });
     } catch (e) {
-      emit(PublicChatError('Error loading messages'));
+      logger.e('Error loading messages: $e');
+      emit(PublicChatError('Error loading messages: ${e.toString()}'));
     }
   }
 
+
   Future<void> sendMessage(Channel channel, String message) async {
     try {
-      emit(PublicChatSendingMessage());
+      emit(PublicChatSendingMessage());  // Emitting the sending state
       await chatService.sendMessage(channel, message);
+
+      // Log to ensure the message was sent successfully
+      logger.i('Message sent successfully: $message');
+
+      // After sending the message, emit a new state
+      emit(PublicChatMessageSent());
+
+      // Optionally, call loadMessages() to refresh the messages
+      await loadMessages(channel);
+    } catch (e) {
+      logger.e('Error sending message: $e');
+      emit(PublicChatError('Error sending message: ${e.toString()}'));
+    }
+  }
+
+
+  Future<void> monitorUserPresence(User user) async {
+    try {
+      final presenceStream = chatService.getUserPresence(user);
+      _userPresenceSubscription = presenceStream.listen((user) {
+        // Handle user presence updates
+      });
+    } catch (e) {
+      logger.e('Error monitoring user presence: $e');
+      emit(PublicChatError('Error monitoring user presence: ${e.toString()}'));
+    }
+  }
+
+  Future<void> monitorTypingIndicator(Channel channel) async {
+    try {
+      final typingStream = chatService.getTypingIndicator(channel);
+      _typingIndicatorSubscription = typingStream.listen((isTyping) {
+        emit(PublicChatTyping(isTyping));
+      });
+    } catch (e) {
+      logger.e('Error monitoring typing indicator: $e');
+      emit(PublicChatError('Error monitoring typing indicator: ${e.toString()}'));
+    }
+  }
+
+  Future<void> loadReactions(String messageId) async {
+    try {
+      emit(PublicChatLoadingReactions());
+      final reactionsResponse = await chatService.getReactions(messageId);
+      emit(PublicChatReactionsLoaded(reactionsResponse.reactions));
+    } catch (e) {
+      logger.e('Error loading reactions: $e');
+      emit(PublicChatError('Error loading reactions: ${e.toString()}'));
+    }
+  }
+
+  Future<void> sendThreadedReply(Channel channel, Message parentMessage, String text) async {
+    try {
+      emit(PublicChatSendingMessage());
+      await chatService.sendThreadedReply(channel, parentMessage, text);
       emit(PublicChatMessageSent());
     } catch (e) {
-      emit(PublicChatError('Error sending message'));
+      logger.e('Error sending threaded reply: $e');
+      emit(PublicChatError('Error sending threaded reply: ${e.toString()}'));
     }
+  }
+
+  @override
+  Future<void> close() {
+    _messagesSubscription?.cancel();
+    _userPresenceSubscription?.cancel();
+    _typingIndicatorSubscription?.cancel();
+    return super.close();
   }
 }

@@ -6,8 +6,13 @@ class StreamChannelService {
   StreamChannelService(this.client);
 
   Future<Channel> initializeChannel(String channelId) async {
-    final channel = client.channel('messaging', id: channelId);
-    await channel.watch();
-    return channel;
+    try {
+      final channel = client.channel('messaging', id: channelId);
+      await channel.watch();
+      return channel;
+    } catch (e) {
+      print("Error initializing channel: $e"); // Add this to log errors
+      rethrow; // Optionally, rethrow the error to handle it at a higher level
+    }
   }
 }

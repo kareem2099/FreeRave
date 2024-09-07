@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:stream_chat_flutter/stream_chat_flutter.dart';
 
 class ChatBubble extends StatelessWidget {
   final Message message;
+  final Function(String) onReaction;
+  final Function(Message) onThreadReply;
 
-  const ChatBubble({super.key, required this.message});
+  const ChatBubble({super.key, required this.message, required this.onReaction, required this.onThreadReply});
 
   @override
   Widget build(BuildContext context) {
@@ -25,16 +28,24 @@ class ChatBubble extends StatelessWidget {
           ),
         ),
         child: Column(
-          crossAxisAlignment:
-          isMyMessage ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+          crossAxisAlignment: isMyMessage ? CrossAxisAlignment.end : CrossAxisAlignment.start,
           children: [
             if (!isMyMessage) ...[
-              Text(
-                message.user?.name ?? 'Anonymous',
-                style: const TextStyle(
-                  fontSize: 12.0,
-                  color: Colors.black54,
-                ),
+              Row(
+                children: [
+                  CircleAvatar(
+                    backgroundImage: NetworkImage(message.user?.extraData['image'] as String? ?? ''),
+                    radius: 16,
+                  ),
+                  const SizedBox(width: 8),
+                  Text(
+                    message.user?.extraData['name'] as String? ?? 'Anonymous',
+                    style: const TextStyle(
+                      fontSize: 12.0,
+                      color: Colors.black54,
+                    ),
+                  ),
+                ],
               ),
               const SizedBox(height: 4),
             ],
@@ -47,11 +58,25 @@ class ChatBubble extends StatelessWidget {
             ),
             const SizedBox(height: 4),
             Text(
-              message.createdAt?.toLocal().toString() ?? '',
+              DateFormat('hh:mm a').format(message.createdAt.toLocal()),
               style: TextStyle(
                 fontSize: 10.0,
                 color: isMyMessage ? Colors.white70 : Colors.black54,
               ),
+            ),
+            const SizedBox(height: 4),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                IconButton(
+                  onPressed: () => onReaction(message.id),
+                  icon: const Icon(Icons.thumb_up, size: 16),
+                ),
+                IconButton(
+                  onPressed: () => onThreadReply(message),
+                  icon: const Icon(Icons.reply, size: 16),
+                ),
+              ],
             ),
           ],
         ),

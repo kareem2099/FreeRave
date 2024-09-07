@@ -1,7 +1,10 @@
+import 'dart:convert';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:http/http.dart' as http;
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -14,7 +17,7 @@ class AuthService {
   // Helper method to save user data in Firestore
   Future<void> _saveUserData(User user, Map<String, String?> userData) async {
     final userRef =
-        FirebaseFirestore.instance.collection('users').doc(user.uid);
+    FirebaseFirestore.instance.collection('users').doc(user.uid);
     await userRef.set({
       'uid': user.uid,
       'name': userData['name'],
@@ -22,10 +25,42 @@ class AuthService {
       'photoUrl': userData['photoUrl'],
       'friendRequests': [],
       'friends': [],
-      'passwordChangeDate' : null,
+      'passwordChangeDate': null,
       'passwordHistory': [],
     });
   }
+
+  // Mock method to get a StreamChat token based on Firebase UID
+  Future<String> getStreamChatToken(String userId) async {
+    final url = Uri.parse(
+        'https://freerave-buxr59vwd-kareem-ehabs-projects-6a2c349e.vercel.app/generate-token'); // Replace with your backend URL
+
+    final response = await http.post(
+      url,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: json.encode({'userId': userId}),
+    );
+
+    if (response.statusCode == 200) {
+      final data = json.decode(response.body);
+      return data['token'];
+    } else {
+      throw Exception('Failed to generate StreamChat token');
+    }
+  }
+
+  Map<String, String?> getUserInfo() {
+    final user = currentUser;
+    return {
+      'userID': user?.uid,
+      'name': user?.displayName,
+      'email': user?.email,
+      'photoUrl': user?.photoURL,
+    };
+  }
+
 
   Future<void> signInWithEmail(String email, String password) async {
     final userCredential = await _auth.signInWithEmailAndPassword(

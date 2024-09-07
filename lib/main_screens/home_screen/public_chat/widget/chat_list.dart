@@ -4,16 +4,34 @@ import 'chat_bubble.dart';
 import 'chat_loading_indicator.dart';
 
 class ChatList extends StatelessWidget {
-  const ChatList({super.key});
+  final Function(String) onReaction;
+  final Function(Message) onThreadReply;
+
+  const ChatList({
+    super.key,
+    required this.onReaction,
+    required this.onThreadReply,
+  });
 
   @override
   Widget build(BuildContext context) {
     return StreamMessageListView(
       loadingBuilder: (context) {
-        return const ChatLoadingIndicator(); // Show loading indicator while messages are being fetched
+        return const Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ChatLoadingIndicator(),
+            SizedBox(height: 10),
+            Text('Loading Messages...'),
+          ],
+        );
       },
       messageBuilder: (context, messageDetails, messages, defaultMessageWidget) {
-        return ChatBubble(message: messageDetails.message); // Use custom chat bubble for each message
+        return ChatBubble(
+          message: messageDetails.message,
+          onReaction: onReaction,
+          onThreadReply: onThreadReply,
+        );
       },
     );
   }
