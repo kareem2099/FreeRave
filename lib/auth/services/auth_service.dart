@@ -3,7 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
@@ -23,6 +22,8 @@ class AuthService {
       'photoUrl': userData['photoUrl'],
       'friendRequests': [],
       'friends': [],
+      'passwordChangeDate' : null,
+      'passwordHistory': [],
     });
   }
 
@@ -62,6 +63,7 @@ class AuthService {
 
     final user = userCredential.user;
     final userData = {
+      'uid': user?.uid,
       'name': user?.displayName,
       'email': user?.email,
       'photoUrl': user?.photoURL,
@@ -100,6 +102,4 @@ class AuthService {
     await user?.reload();
     return user?.emailVerified ?? false;
   }
-
-
 }

@@ -24,13 +24,19 @@ class _ForgotPasswordDialogState extends State<ForgotPasswordDialog> {
     if (_formKey.currentState?.validate() ?? false) {
       try {
         await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+        if (!mounted) return;
+
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('If an account exists for this email, a password reset link has been sent.'),
+            content: Text(
+                'If an account exists for this email, a password reset link has been sent.'),
           ),
         );
+
         Navigator.of(context).pop();
       } catch (e) {
+        if (!mounted) return;
+
         if (e is FirebaseAuthException && e.code == 'user-not-found') {
           _showEmailNotFoundDialog();
         } else {
@@ -39,18 +45,20 @@ class _ForgotPasswordDialogState extends State<ForgotPasswordDialog> {
               content: Text('Failed to send password reset email: $e'),
             ),
           );
-
         }
       }
     }
   }
+
+
 
   void _showEmailNotFoundDialog() {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
         title: const Text('Email Not Registered'),
-        content: const Text('This email is not registered. Would you like to register?'),
+        content: const Text(
+            'This email is not registered. Would you like to register?'),
         actions: [
           TextButton(
             onPressed: () {

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../auth/cubit/auth_state.dart';
-import '../../auth/cubit/friend_request_cubit.dart';
+
+import '../../../../auth/cubit/auth_state.dart';
+import '../../../../auth/cubit/friend_request_cubit.dart';
 import '../models/user_model.dart';
 import 'friend_list_item.dart';
 

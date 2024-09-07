@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freerave/note/model/note_model.dart';
 import '../auth/note_cubit.dart';
 import '../auth/note_state.dart';
+import '../model/note_model.dart';
 import '../services/speech_service.dart';
 import '../widget/note_dialog.dart';
 import '../widget/note_list.dart';

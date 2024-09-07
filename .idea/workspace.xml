@@ -4,7 +4,139 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3e05d84-e61f-43ca-aa70-8c149a119cba" name="Changes" comment="" />
+    <list default="true" id="b3e05d84-e61f-43ca-aa70-8c149a119cba" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/public_chat/cubit/stream_chat_cubit.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/public_chat/cubit/stream_chat_state.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/public_chat/widget/chat_bubble.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/public_chat/widget/chat_list.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/public_chat/widget/chat_loading_indicator.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/public_chat/widget/chat_message_input.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/public_chat/widget/chat_navigator.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/public_chat/widget/chat_theme.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/quiz/screens/question_creation_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/main_screens/profile/cubit/profile_cubit.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/main_screens/profile/cubit/profile_service.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/main_screens/profile/cubit/profile_state.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/main_screens/profile/screen/profile_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/main_screens/profile/security/cubit/two_factor_auth_cubit.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/main_screens/profile/security/cubit/two_factor_auth_service.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/main_screens/profile/security/cubit/two_factor_auth_state.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/main_screens/profile/security/model/two_factor_auth_model.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/main_screens/profile/security/password/cubit/password_management_cubit.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/main_screens/profile/security/password/cubit/password_management_state.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/main_screens/profile/security/password/screen/change_password_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/main_screens/profile/security/password/screen/password_history_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/main_screens/profile/security/password/screen/reset_password_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/main_screens/profile/security/password/services/password_management_service.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/main_screens/profile/security/password/widget/password_field.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/main_screens/profile/security/screen/code_verification_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/main_screens/profile/security/screen/email_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/main_screens/profile/security/screen/security_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/main_screens/profile/security/screen/sms_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/main_screens/profile/security/screen/two_factor_auth_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/main_screens/profile/security/screen/two_factor_auth_screen_v1.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/main_screens/profile/widget/profile_details.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib.zip" beforeDir="false" afterPath="$PROJECT_DIR$/lib.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/auth/cubit/auth_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/auth/cubit/auth_cubit.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/auth/cubit/auth_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/auth/cubit/auth_state.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/auth/cubit/phone_number_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/profile/security/cubit/phone_number_cubit.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/auth/services/auth_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/auth/services/auth_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/auth/services/friend_request_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/auth/services/friend_request_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/auth/services/phone_auth_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/profile/security/cubit/phone_auth_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/connections/Widgets/drawer_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/connections/Widgets/drawer_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/connections/Widgets/friend_list_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/connections/Widgets/friend_list_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/connections/Widgets/friend_request_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/connections/Widgets/friend_request_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/connections/Widgets/user_tile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/connections/Widgets/user_tile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/connections/models/user_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/connections/models/user_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/connections/screens/connections_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/connections/screens/connections_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/connections/screens/friend_requests_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/connections/screens/friend_requests_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/connections/screens/friends_list_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/connections/screens/friends_list_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/connections/screens/search_friends_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/connections/screens/search_friends_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/cut_loose/auth/cut_loose_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/cut_loose/auth/cut_loose_cubit.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/cut_loose/auth/cut_loose_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/cut_loose/auth/cut_loose_state.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/cut_loose/auth/firebase_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/cut_loose/auth/firebase_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/cut_loose/model/cut_loose_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/cut_loose/model/cut_loose_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/cut_loose/views/cut_loose_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/cut_loose/views/cut_loose_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/note/auth/note_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/note/auth/note_cubit.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/note/auth/note_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/note/auth/note_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/note/auth/note_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/note/auth/note_state.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/note/model/note_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/note/model/note_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/note/screen/notes_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/note/screen/notes_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/note/services/local_note_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/note/services/local_note_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/note/services/speech_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/note/services/speech_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/note/widget/note_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/note/widget/note_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/note/widget/note_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/note/widget/note_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/note/widget/search_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/note/widget/search_bar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/public_chat/auth/auth_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_file_components/app_routes.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/public_chat/auth/call_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_file_components/bloc_providers.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/public_chat/auth/chat_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_file_components/stream_chat_client.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/public_chat/models/message_model.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/public_chat/models/user_model.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/public_chat/screens/call_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/public_chat/screens/chat_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/public_chat/chat_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/public_chat/services/auth_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/public_chat/const.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/public_chat/services/firestore_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/public_chat/cubit/stream_channel_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/public_chat/services/functions_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/public_chat/cubit/stream_chat_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/public_chat/services/storage_service.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/public_chat/widgets/call_button.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/public_chat/widgets/input_field.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/public_chat/page/chat_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/public_chat/widgets/message_widget.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/quiz/cubit/question_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/quiz/cubit/question_cubit.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/quiz/cubit/quiz_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/quiz/cubit/quiz_cubit.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/quiz/cubit/timer_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/quiz/cubit/timer_cubit.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/quiz/models/hint_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/quiz/models/hint_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/quiz/models/question.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/quiz/models/question.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/quiz/models/quiz.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/quiz/models/quiz.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/quiz/models/timer_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/quiz/models/timer_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/quiz/models/user_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/quiz/models/user_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/quiz/screens/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/quiz/screens/home_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/quiz/screens/question_answer_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/quiz/screens/question_answer_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/quiz/screens/question_creation_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/quiz/screens/quiz_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/quiz/screens/quiz_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/quiz/screens/single_player_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/quiz/screens/single_player_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/quiz/screens/two_player_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/quiz/screens/two_player_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/quiz/screens/waiting_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/quiz/screens/waiting_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/quiz/services/hint_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/quiz/services/hint_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/quiz/services/question_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/quiz/services/question_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/quiz/services/quiz_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/quiz/services/quiz_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/quiz/services/timer_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/quiz/services/timer_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/quiz/states/question_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/quiz/states/question_state.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/quiz/states/quiz_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/quiz/states/quiz_state.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/quiz/states/timer_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/quiz/states/timer_state.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/quiz/widgets/question_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/quiz/widgets/question_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/quiz/widgets/timer_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/quiz/widgets/timer_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/chat_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/chat_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/home_screen/home_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/login_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/auth/screen/login_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/main_navigation.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/main_navigation.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_screens/settings_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/register_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/auth/screen/register_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/settings_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widget/forgot_password_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widget/forgot_password_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widget/register_form.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widget/register_form.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +152,21 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;kareem2099&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/kareem2099/FreeRave.git&quot;,
+    &quot;accountId&quot;: &quot;0e3c1365-d812-4c88-8173-f2987c7cdbda&quot;
+  }
+}</component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
@@ -38,10 +185,12 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/kareem/Downloads/FreeRave&quot;,
@@ -51,9 +200,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/lib/auth/services" />
-      <recent name="$PROJECT_DIR$/lib/auth/cubit" />
-      <recent name="$PROJECT_DIR$/lib/screens" />
+      <recent name="$PROJECT_DIR$/lib/main_screens" />
+      <recent name="$PROJECT_DIR$/lib/main_screens/components" />
+      <recent name="$PROJECT_DIR$/lib/auth/screen" />
+      <recent name="$PROJECT_DIR$/lib/profile/security/cubit" />
+      <recent name="$PROJECT_DIR$/lib/profile/security/secreen" />
     </key>
   </component>
   <component name="RunManager">
@@ -72,5 +223,16 @@
       <updated>1723329967694</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

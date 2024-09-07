@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freerave/profile/security/screen/security_screen.dart';
-import '../../auth/cubit/auth_cubit.dart';
-import '../../main_screens/components/connections/models/user_model.dart';
+
+import '../../../auth/cubit/auth_cubit.dart';
+import '../../home_screen/connections/models/user_model.dart';
+import '../security/screen/security_screen.dart';
+
 
 class ProfileDetails extends StatelessWidget {
   final UserModel user;

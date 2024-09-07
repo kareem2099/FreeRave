@@ -8,8 +8,10 @@ class AuthCubit extends Cubit<AuthState> {
   AuthCubit(this._authService) : super(AuthInitial()) {
     _authService.user.listen((user) {
       if (user != null) {
+        // print('User data received: $user');
         emit(AuthAuthenticated(user, {}));
       } else {
+        // print('No user data received');
         emit(AuthUnauthenticated());
       }
     });
@@ -39,6 +41,7 @@ class AuthCubit extends Cubit<AuthState> {
     try {
       emit(AuthLoading());
       final userData = await _authService.signInWithGoogle();
+      // print('Google sign-in user data: $userData');
       emit(AuthAuthenticated(_authService.currentUser!,
           userData)); // Or pass userData to the state
     } catch (e) {
@@ -50,6 +53,7 @@ class AuthCubit extends Cubit<AuthState> {
     try {
       emit(AuthLoading());
       final userData = await _authService.signInWithFacebook();
+      // print('Facebook sign-in user data: $userData');
       emit(AuthAuthenticated(_authService.currentUser!,
           userData)); // Or pass userData to the state
     } catch (e) {

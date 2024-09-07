@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:freerave/screens/chat_screen.dart';
-import 'package:freerave/screens/home_screen.dart';
-import 'package:freerave/screens/settings_screen.dart';
+import 'package:freerave/main_screens/chat_screen.dart';
+import 'package:freerave/main_screens/home_screen/home_screen.dart';
+import 'package:freerave/main_screens/profile/screen/profile_screen.dart';
+import 'package:freerave/main_screens/settings_screen.dart';
+import 'package:stream_chat_flutter/stream_chat_flutter.dart';
 
-import '../profile/screen/profile_screen.dart';
 import '../widget/bottom_navigation_bar.dart';
 
 class MainNavigation extends StatefulWidget {
-  const MainNavigation({super.key});
+  final StreamChatClient client; // Add client parameter here
+
+  const MainNavigation({super.key, required this.client}); // Accept client in constructor
 
   @override
   MainNavigationState createState() => MainNavigationState();
@@ -16,12 +19,18 @@ class MainNavigation extends StatefulWidget {
 class MainNavigationState extends State<MainNavigation> {
   int _currentIndex = 0;
 
-  final List<Widget> screens = [
-    const HomeScreen(),
-    const ChatScreen(),
-    const SettingsScreen(),
-    const ProfileScreen(),
-  ];
+  late final List<Widget> screens;
+
+  @override
+  void initState() {
+    super.initState();
+    screens = [
+      StreamChat(client: widget.client, child: const HomeScreen()), // Wrap HomeScreen
+      const ChatScreen(),
+      const SettingsScreen(),
+      const ProfileScreen(),
+    ];
+  }
 
   void _onItemTapped(int index) {
     setState(() {

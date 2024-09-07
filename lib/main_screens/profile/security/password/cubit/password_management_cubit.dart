@@ -1,7 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freerave/profile/security/password/cubit/password_management_state.dart';
-import 'package:freerave/profile/security/password/services/password_management_service.dart';
+import 'package:freerave/main_screens/profile/security/password/cubit/password_management_state.dart';
+
+import '../services/password_management_service.dart';
 
 class PasswordManagementCubit extends Cubit<PasswordManagementState> {
   final PasswordManagementService _passwordService;

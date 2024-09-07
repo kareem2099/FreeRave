@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../auth/cubit/auth_cubit.dart';
-import '../auth/cubit/auth_state.dart';
-import '../widget/custom_text_form_field.dart';
-import '../widget/social_button.dart';
-import '../utils/validators.dart';
-import '../widget/forgot_password_dialog.dart';
+import '../cubit/auth_cubit.dart';
+import '../cubit/auth_state.dart';
+import '../../widget/custom_text_form_field.dart';
+import '../../widget/social_button.dart';
+import '../../utils/validators.dart';
+import '../../widget/forgot_password_dialog.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});

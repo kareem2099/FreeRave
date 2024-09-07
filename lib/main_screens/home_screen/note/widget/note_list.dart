@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:freerave/note/model/note_model.dart';
 import '../auth/note_cubit.dart';
+import '../model/note_model.dart';
 
 class NoteList extends StatelessWidget {
   final List<NoteModel> notes;

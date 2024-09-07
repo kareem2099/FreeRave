@@ -1,5 +1,6 @@
 
-import '../../main_screens/components/connections/models/user_model.dart';
+
+import '../../home_screen/connections/models/user_model.dart';
 
 abstract class ProfileState {}
 

@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import '../../connections/models/user_model.dart';
+import '../../main_screens/home_screen/connections/models/user_model.dart';
 import '../cubit/auth_state.dart';
 
 class FriendRequestService {

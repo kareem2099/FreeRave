@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freerave/profile/security/cubit/two_factor_auth_cubit.dart';
-import 'package:freerave/profile/security/cubit/two_factor_auth_state.dart';
-import 'package:freerave/profile/security/password/screen/change_password_screen.dart';
-import 'package:freerave/profile/security/password/screen/password_history_screen.dart';
-import 'package:freerave/profile/security/password/screen/reset_password_screen.dart';
-import 'package:freerave/profile/security/screen/email_screen.dart';
-import 'package:freerave/profile/security/screen/sms_screen.dart';
-import 'package:freerave/profile/security/screen/two_factor_auth_screen.dart';
+import 'package:freerave/main_screens/profile/security/cubit/two_factor_auth_cubit.dart';
+import 'package:freerave/main_screens/profile/security/screen/sms_screen.dart';
+import 'package:freerave/main_screens/profile/security/screen/two_factor_auth_screen.dart';
+
+import '../cubit/two_factor_auth_state.dart';
+import '../password/screen/change_password_screen.dart';
+import '../password/screen/password_history_screen.dart';
+import '../password/screen/reset_password_screen.dart';
+import 'email_screen.dart';
+
 
 class SecurityScreen extends StatelessWidget {
   const SecurityScreen({super.key});

@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
-import '../../connections/models/user_model.dart';
+import '../../main_screens/home_screen/connections/models/user_model.dart';
 
 abstract class AuthState {}
 

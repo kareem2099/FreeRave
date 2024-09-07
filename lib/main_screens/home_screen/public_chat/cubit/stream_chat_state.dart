@@ -1,7 +1,28 @@
-abstract class ChatState {}
 
-class ChatInitial extends ChatState {}
+import 'package:stream_chat_flutter/stream_chat_flutter.dart';
 
-class ChatConnected extends ChatState {}
+abstract class PublicChatState {}
 
-class ChatDisconnected extends ChatState {}
+class PublicChatInitial extends PublicChatState {}
+
+class PublicChatConnecting extends PublicChatState {}
+
+class PublicChatConnected extends PublicChatState {}
+
+class PublicChatDisconnected extends PublicChatState {}
+
+class PublicChatError extends PublicChatState {
+  final String error;
+  PublicChatError(this.error);
+}
+
+class PublicChatLoadingMessages extends PublicChatState {}
+
+class PublicChatMessagesLoaded extends PublicChatState {
+  final List<Message> messages;
+  PublicChatMessagesLoaded(this.messages);
+}
+
+class PublicChatSendingMessage extends PublicChatState {}
+
+class PublicChatMessageSent extends PublicChatState {}

@@ -1,7 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freerave/profile/cubit/profile_service.dart';
-import '../../main_screens/components/connections/models/user_model.dart';
+import 'package:freerave/main_screens/home_screen/connections/models/user_model.dart';
+import 'package:freerave/main_screens/profile/cubit/profile_service.dart';
+
 import 'profile_state.dart';
 
 class ProfileCubit extends Cubit<ProfileState> {

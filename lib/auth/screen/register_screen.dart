@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freerave/profile/security/cubit/phone_number_cubit.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
-import '../auth/cubit/auth_cubit.dart';
-import '../auth/cubit/auth_state.dart';
-import '../utils/validators.dart';
-import '../widget/register_form.dart';
+import '../../main_screens/profile/security/cubit/phone_number_cubit.dart';
+import '../cubit/auth_cubit.dart';
+import '../cubit/auth_state.dart';
+import '../../utils/validators.dart';
+import '../../widget/register_form.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});

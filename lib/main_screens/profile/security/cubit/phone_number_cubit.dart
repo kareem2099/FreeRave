@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freerave/auth/cubit/auth_state.dart';
-import 'package:freerave/profile/security/cubit/phone_auth_service.dart';
+import 'package:freerave/main_screens/profile/security/cubit/phone_auth_service.dart';
 
 class PhoneNumberCubit extends Cubit<AuthState> {
   final PhoneAuthService _authService;

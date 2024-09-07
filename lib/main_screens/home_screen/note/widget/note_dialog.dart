@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:freerave/note/model/note_model.dart';
 import '../auth/note_cubit.dart';
+import '../model/note_model.dart';
 
 class NoteDialog extends StatelessWidget {
   final NoteCubit notesCubit;

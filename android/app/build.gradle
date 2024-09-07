@@ -76,4 +76,11 @@ dependencies {
     implementation("com.google.firebase:firebase-appcheck-playintegrity")
     implementation("com.google.firebase:firebase-auth")
     implementation 'com.facebook.android:facebook-android-sdk:latest.release'
+    implementation "io.getstream:stream-chat-android-compose:6.5.0"
+    implementation "io.getstream:stream-chat-android-client:6.5.0"
+    implementation "io.getstream:stream-chat-android-state:6.5.0"
+    implementation "io.getstream:stream-chat-android-offline:6.5.0"
+    implementation "io.getstream:stream-chat-android-ui-components:6.5.0"
+    implementation "io.getstream:stream-chat-android-compose:6.5.0"
+//    implementation "stream-chat-android-markdown-transformer:6.5.0"
 }

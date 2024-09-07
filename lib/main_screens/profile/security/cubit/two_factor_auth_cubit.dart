@@ -1,8 +1,10 @@
 import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freerave/profile/security/cubit/two_factor_auth_service.dart';
-import 'package:freerave/profile/security/cubit/two_factor_auth_state.dart';
-import 'package:freerave/profile/security/model/two_factor_auth_model.dart';
+import 'package:freerave/main_screens/profile/security/cubit/two_factor_auth_service.dart';
+import 'package:freerave/main_screens/profile/security/cubit/two_factor_auth_state.dart';
+
+import '../model/two_factor_auth_model.dart';
+
 
 class TwoFactorAuthCubit extends Cubit<TwoFactorAuthState> {
   final TwoFactorAuthService _authService;

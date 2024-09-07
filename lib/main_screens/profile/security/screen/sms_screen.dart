@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freerave/profile/security/cubit/phone_number_cubit.dart';
 import 'package:freerave/auth/cubit/auth_state.dart';
+
+import '../cubit/phone_number_cubit.dart';
 
 class SmsScreen extends StatelessWidget {
   const SmsScreen({super.key});

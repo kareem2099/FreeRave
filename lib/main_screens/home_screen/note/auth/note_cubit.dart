@@ -1,7 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freerave/note/auth/note_service.dart';
-import 'package:freerave/note/auth/note_state.dart';
-import 'package:freerave/note/model/note_model.dart';
+
+import '../model/note_model.dart';
+import 'note_service.dart';
+import 'note_state.dart';
+
 
 class NoteCubit extends Cubit<NoteState> {
   final NoteService _noteService;

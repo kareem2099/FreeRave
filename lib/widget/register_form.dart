@@ -3,7 +3,6 @@ import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import '../widget/custom_text_form_field.dart';
 import '../widget/password_criteria.dart';
 import '../utils/validators.dart';
-import '../widget/phone_button_with_send_code.dart';
 
 class RegisterForm extends StatelessWidget {
   const RegisterForm({
@@ -61,18 +60,6 @@ class RegisterForm extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text('Use Phone Number?'),
-                  Switch(
-                    value: isUsingPhoneNumber,
-                    onChanged: onToggleUsePhoneNumber,
-                  ),
-                ],
-              ),
-              const SizedBox(height: 16.0),
-              if (!isUsingPhoneNumber)
                 Column(
                   children: [
                     CustomTextFormField(
@@ -122,52 +109,6 @@ class RegisterForm extends StatelessWidget {
                 isValid: hasMinLength,
                 label: 'At least 8 characters',
               ),
-              const SizedBox(height: 20),
-              if (isUsingPhoneNumber) ...[
-                InternationalPhoneNumberInput(
-                  onInputChanged: (PhoneNumber number) {
-                    phoneController.text = number.phoneNumber!;
-                    onPhoneNumberChanged(number);
-                  },
-                  initialValue: PhoneNumber(isoCode: 'EG'),
-                  textFieldController: phoneController,
-                  formatInput: true,
-                  inputDecoration: InputDecoration(
-                    labelText: 'Phone Number',
-                    prefixIcon: const Icon(Icons.phone),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12.0),
-                    ),
-                  ),
-                  selectorConfig: const SelectorConfig(
-                    selectorType: PhoneInputSelectorType.DROPDOWN,
-                    showFlags: true,
-                    useEmoji: true,
-                  ),
-                  autoValidateMode: AutovalidateMode.onUserInteraction,
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter a phone number';
-                    }
-                    return null;
-                  },
-                ),
-                if (isCodeSent) ...[
-                  const SizedBox(height: 16.0),
-                  CustomTextFormField(
-                    controller: smsCodeController,
-                    labelText: 'SMS Code',
-                    prefixIcon: const Icon(Icons.message),
-                    validator: Validators.validateSmsCode,
-                  ),
-                ],
-                const SizedBox(height: 16.0),
-                PhoneButtonWithSendCode(
-                  onPressed: onSendCode,
-                  text: 'Send Code',
-                ),
-              ],
-              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: onRegister,
                 style: ElevatedButton.styleFrom(

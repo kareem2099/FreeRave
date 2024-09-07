@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_password_strength/flutter_password_strength.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:freerave/profile/security/password/cubit/password_management_cubit.dart';
-import 'package:freerave/profile/security/password/cubit/password_management_state.dart';
-import 'package:freerave/profile/security/password/screen/reset_password_screen.dart';
+import 'package:freerave/main_screens/profile/security/password/screen/reset_password_screen.dart';
 
+
+import '../cubit/password_management_cubit.dart';
+import '../cubit/password_management_state.dart';
 import '../widget/password_field.dart';
 
 class ChangePasswordScreen extends StatefulWidget {

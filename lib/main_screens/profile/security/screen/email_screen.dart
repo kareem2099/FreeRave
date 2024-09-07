@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freerave/profile/security/cubit/two_factor_auth_cubit.dart';
-import 'package:freerave/profile/security/cubit/two_factor_auth_state.dart';
+
+import '../cubit/two_factor_auth_cubit.dart';
+import '../cubit/two_factor_auth_state.dart';
+
 
 class EmailScreen extends StatelessWidget {
   const EmailScreen({super.key});

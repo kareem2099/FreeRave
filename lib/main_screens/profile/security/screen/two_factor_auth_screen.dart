@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:qr_flutter/qr_flutter.dart';
-import 'package:freerave/profile/security/cubit/two_factor_auth_cubit.dart';
-import 'package:freerave/profile/security/cubit/two_factor_auth_state.dart';
 
+
+import '../cubit/two_factor_auth_cubit.dart';
+import '../cubit/two_factor_auth_state.dart';
 import 'code_verification_screen.dart';
 
 class TwoFactorAuthScreen extends StatefulWidget {

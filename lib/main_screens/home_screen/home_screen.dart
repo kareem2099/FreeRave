@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:freerave/connections/screens/connections_screen.dart';
-import 'package:freerave/cut_loose/views/cut_loose_view.dart';
-import 'package:freerave/note/screen/notes_screen.dart';
-import 'package:freerave/quiz/screens/home_screen.dart';
-import '../widget/grid_items.dart';
+import 'package:freerave/main_screens/home_screen/public_chat/cubit/stream_channel_service.dart';
+import 'package:freerave/main_screens/home_screen/public_chat/page/chat_page.dart';
+import 'package:freerave/main_screens/home_screen/public_chat/widget/chat_navigator.dart';
+import 'package:stream_chat_flutter/stream_chat_flutter.dart';
+
+import '../../widget/grid_items.dart';
+import 'connections/screens/connections_screen.dart';
+import 'cut_loose/views/cut_loose_view.dart';
+import 'note/screen/notes_screen.dart';
+import 'quiz/screens/home_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,6 +18,17 @@ class HomeScreen extends StatefulWidget {
 }
 
 class HomeScreenState extends State<HomeScreen> {
+  late final StreamChannelService _channelService;
+  late final ChatNavigator _chatNavigator;
+
+  @override
+  void initState() {
+    super.initState();
+    final client = StreamChat.of(context).client;
+    _channelService = StreamChannelService(client);
+    _chatNavigator = ChatNavigator(_channelService);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,45 +41,15 @@ class HomeScreenState extends State<HomeScreen> {
             child: GridView.builder(
               padding: const EdgeInsets.all(16),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3, // 3 items per row
+                crossAxisCount: 3,
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 80,
               ),
-              itemCount: gridItems.length, // Use the length of gridItems
+              itemCount: gridItems.length,
               itemBuilder: (context, index) {
                 return GestureDetector(
                   onTap: () {
-                    if (index == 0) {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const ConnectionsScreen(),
-                        ),
-                      );
-                    }
-                    if (index == 4) {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const NotesScreen(),
-                        ),
-                      );
-                    }
-                    if (index == 5) {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const CutLooseView(),
-                        ),
-                      );
-                    }
-                    if (index == 7) {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                 const HomeScreenQuiz()),
-                      );
-                    }
+                    _handleGridItemTap(context, index);
                   },
                   child: AnimatedOpacity(
                     opacity: 1.0,
@@ -74,7 +60,6 @@ class HomeScreenState extends State<HomeScreen> {
                         children: [
                           Icon(
                             gridItems[index].icon,
-                            // Use the icon from gridItems
                             size: 50,
                             color: Colors.blue,
                           ),
@@ -82,11 +67,11 @@ class HomeScreenState extends State<HomeScreen> {
                           Expanded(
                             child: Text(
                               gridItems[index].label,
-                              // Use the label from gridItems
                               style: const TextStyle(
-                                fontSize: 10,
-                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                color: Colors.black,
                               ),
+                              textAlign: TextAlign.center,
                             ),
                           ),
                         ],
@@ -100,5 +85,39 @@ class HomeScreenState extends State<HomeScreen> {
         ],
       ),
     );
+  }
+
+  void _handleGridItemTap(BuildContext context, int index) {
+    if (index == 0) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const ConnectionsScreen(),
+        ),
+      );
+    } else if (index == 1) {
+      _chatNavigator.navigateToChat(context, 'public-chat');
+    } else if (index == 4) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const NotesScreen(),
+        ),
+      );
+    } else if (index == 5) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const CutLooseView(),
+        ),
+      );
+    } else if (index == 7) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const HomeScreenQuiz(),
+        ),
+      );
+    }
   }
 }
